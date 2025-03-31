@@ -4,6 +4,7 @@ import HomeComp from "@/components/HomeComp.vue";
 import AboutComp from "@/components/AboutComp.vue";
 import SettingsComp from "@/components/SettingsComp.vue";
 import ProfileComp from "@/components/ProfileComp.vue";
+import ContactusComp from "@/components/ContactusComp.vue";
 
 const routes = [
   { path: "/home",
@@ -15,7 +16,8 @@ const routes = [
 
   },
   { path: "/about", component: AboutComp },
-  {path:"/", component: HelloWorld}
+  {path:"/", component: HelloWorld},
+  {path: "/contact" , component: ContactusComp}
 ];
 
 const router = createRouter({

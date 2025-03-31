@@ -2,6 +2,7 @@
   <router-link to="/">HelloWorld</router-link>
   <router-link to="/home">Home</router-link>
   <router-link to="/about">About</router-link>
+  <router-link to="/contact">Contactus</router-link>
  
 <router-view></router-view>
 </template>
