@@ -1,6 +1,5 @@
 <template>
 <div class="hello">
-    <h1>{{ msg }}</h1>
     <h2></h2>
     <p>
         Lets build 2 page appplication
@@ -8,17 +7,50 @@
     </p>
     <ChildComp @ChildEvent="handleMessage" />
 </div>
+<SlutComp>
+    <template v-slot:header>
+        <h1>Shree</h1>
+    </template>
+    <template v-slot:content>
+        <p>lorem</p>
+    </template>
+    <template v-slot:footer>
+        <button>buy me</button>
+    </template>
+</SlutComp>
+<SlutComp>
+    <template v-slot:header>
+        <h1>Keyboard </h1>
+    </template>
+    <template v-slot:content>
+        <p>This is very good </p>
+    </template>
+    <template v-slot:footer>
+
+    </template>
+
+</SlutComp>
+
+<button @click="tab='JavaComp'">Load Java</button>
+<button @click="tab='PhpComp'">Load PHP</button>
+<component :is="tab" />
 </template>
 
 <script>
 import ChildComp from './ChildComp.vue';
+import JavaComp from './JavaComp.vue';
+import PhpComp from './PhpComp.vue';
+import SlutComp from './SlutComp.vue';
 
 export default {
     name: 'HelloWorld',
     components: {
-        ChildComp
+        ChildComp,
+        SlutComp,
+        JavaComp,
+        PhpComp
     },
-   
+
     props: {
         msg: String,
     },
@@ -26,6 +58,11 @@ export default {
         handleMessage(message) {
             alert(message);
             console.warn(message);
+        }
+    },
+    data() {
+        return {
+            tab: "JavaComp"
         }
     }
 }
