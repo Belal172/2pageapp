@@ -1,10 +1,23 @@
 <template>
-    <h1>user profile</h1>
-    <img src="" alt="">
-</template>
-<script>
-export default{
-    name:'ProfileComp'
-}
-
-</script>
+    <div>
+      <h2>Count: {{ count }}</h2>
+      <button @click="increment">Increment</button>
+      <p>Double Count: {{ doubleCount }}</p>
+    </div>
+  </template>
+  
+  <script>
+  import { mapState, mapMutations, mapGetters } from 'vuex';
+  
+  export default {
+    name:'ProfileComp',
+    computed: {
+      ...mapState(['count']),
+      ...mapGetters(['doubleCount'])
+    },
+    methods: {
+      ...mapMutations(['increment'])
+    }
+  };
+  </script>
+  
